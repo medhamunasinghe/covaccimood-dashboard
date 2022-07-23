@@ -1,0 +1,82 @@
+.created-date {
+  float: right;
+  font-size: small;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.jumbo_style{
+  text-align: center;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.jumbo-img{
+  background-image: url(../banner.png);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.box{
+  background-color: #f8f9fa;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+
+.btn_size{
+  padding: 15px 32px;
+  height: 60px;
+}
+
+.issue-name {
+  font-weight: bold;
+}
+
+.mybox {
+  box-shadow: 3px 4px 0px 0px rgb(255 255 255 / 54%);
+  margin-bottom: 10px;
+}
+
+.column-issue {
+  float: left;
+  width: 20%;
+}
+
+.background {
+  background-image: linear-gradient(
+    to right,
+    #23262a,
+    #262a2e,
+    #292d32,
+    #2d3136,
+    #30353a,
+    #30353a,
+    #30353a,
+    #30353a,
+    #2d3136,
+    #292d32,
+    #262a2e,
+    #23262a
+  );
+}
+
+.div-style {
+  width: 100%;
+  max-width: 100%;
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+.box {
+  margin-bottom: 10px;
+}
+
+#left {
+  float: left;
+  background-color: transparent;
+}
+
+#right {
+  float: right;
+  width: 50%;
+  height: 280px;
+  background-color: transparent;
+}

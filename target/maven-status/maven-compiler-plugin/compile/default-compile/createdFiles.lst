@@ -1,0 +1,14 @@
+com/me/dashboard/utils/JObjectMapper.class
+com/me/dashboard/utils/JObjectMapper$Holder.class
+com/me/dashboard/services/AnalysisService.class
+com/me/dashboard/dto/ResultDTO.class
+com/me/dashboard/database/repository/SentimentResultRepository.class
+com/me/dashboard/database/entities/SentimentResult.class
+com/me/dashboard/DashboardApplication.class
+com/me/dashboard/services/DashboardService.class
+com/me/dashboard/controllers/AnalysisController.class
+com/me/dashboard/database/crud/SentimentResultCrud.class
+com/me/dashboard/services/HistoryService.class
+com/me/dashboard/controllers/HistoryController.class
+com/me/dashboard/client/HttpClient.class
+com/me/dashboard/controllers/DashboardController.class
