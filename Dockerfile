@@ -14,7 +14,7 @@ WORKDIR /app
 
 # Copy the React app build output into the Spring Boot app's static resources directory
 COPY --from=frontend-build /app/build/ /app/src/main/resources/static/
-
+RUN apt-get update && apt-get install -y maven
 # Copy the Maven POM file and download dependencies
 COPY pom.xml ./
 RUN mvn -B dependency:go-offline -DskipTests=true
