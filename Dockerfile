@@ -29,4 +29,4 @@ RUN mvn -B package -DskipTests=true
 EXPOSE 5000
 
 # Set the command to run the application when the container starts
-CMD ["java", "-jar", "target/my-app.jar"]
+CMD ["java", "-jar", "target/dashboard-0.0.1-SNAPSHOT.jar"]
