@@ -7,7 +7,7 @@ COPY src/main/resources/dashboard/ ./
 RUN npm run build
 
 # Use an OpenJDK 11 image as the base for the Spring Boot application
-FROM adoptopenjdk:11-jre-hotspot
+FROM adoptopenjdk:11-jdk-hotspot
 
 # Set the working directory to /app
 WORKDIR /app
