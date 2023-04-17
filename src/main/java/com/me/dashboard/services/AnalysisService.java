@@ -40,11 +40,14 @@ public class AnalysisService {
 
         JsonObject obj = (JsonObject) new JsonParser().parse(payload);
         String text = (obj.get("text").getAsString());
+        System.out.println(text);
 
         //call prediction api
         Map<String, Object> res = httpClient.sendPost(url,payload);
+        System.out.println("calling API");
         res.put("text",text);
         if (res.get("status").equals(200)){
+            System.out.println("predicted");
             addResult(String.valueOf(res.get("response")),text);
             logger.info("Result Successfully Received!");
             return String.valueOf(res.get("response"));
