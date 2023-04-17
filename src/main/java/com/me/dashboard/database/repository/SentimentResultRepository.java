@@ -19,5 +19,5 @@ public interface SentimentResultRepository extends CrudRepository<SentimentResul
     Long countAllBySentiment(String sentiment);
 
     @Override
-    List<Platform> findAll();
+    List<SentimentResult> findAll();
 }
