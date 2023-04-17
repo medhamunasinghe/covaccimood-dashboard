@@ -83,7 +83,7 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/v1/csa/charts/options")
+      .get("http://167.71.32.233:8080/api/v1/csa/charts/options")
       .then((response) => response.data)
       .then((data) => {
         this.setState({ chart_2_options: { labels: data } });
@@ -94,7 +94,7 @@ class Dashboard extends React.Component {
       });
 
     axios
-      .get("http://localhost:5000/api/v1/csa/charts/series")
+      .get("http://167.71.32.233:8080/api/v1/csa/charts/series")
       .then((response) => response.data)
       .then((data) => {
         this.setState({ chart_2_series: data });

@@ -49,7 +49,7 @@ export default class HistoryView extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/v1/csa/history")
+      .get("http://167.71.32.233:8080/api/v1/csa/history")
 
       .then((response) => response.data)
       .then((data) => {

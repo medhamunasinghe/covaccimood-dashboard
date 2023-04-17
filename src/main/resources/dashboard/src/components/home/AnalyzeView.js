@@ -31,7 +31,7 @@ export default class AnalyzeView extends Component {
     };
 
     axios
-      .post("http://localhost:5000/api/v1/csa/analyse", text)
+      .post("http://167.71.32.233:8080/api/v1/csa/analyse", text)
       .then((response) => {
         console.log(response);
         if (response.data != null) {
