@@ -22,10 +22,10 @@ public class AnalysisController {
     @Autowired
     AnalysisService analysisService;
 
-    @PostMapping(value = "/analyse")
+    @PostMapping("/analyse")
     public ResponseEntity<String> analyse(@RequestBody(required = false) String payload) {
         try {
-            System.out.println("predicting in controller...")
+            System.out.println("predicting in controller...");
             return new ResponseEntity<>(analysisService.analyse(payload), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
