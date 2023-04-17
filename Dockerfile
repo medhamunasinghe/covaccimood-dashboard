@@ -12,5 +12,6 @@ COPY src/ /app/src/
 RUN mvn package -DskipTests
 
 EXPOSE 8080
+EXPOSE 8000
 
 CMD ["java", "-jar", "target/dashboard-0.0.1-SNAPSHOT.jar"]
