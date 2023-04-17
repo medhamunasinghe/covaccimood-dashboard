@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/api/v1/csa/")
+@RequestMapping("/api/v1/csa")
 public class AnalysisController {
 
     private static final Logger logger = LoggerFactory.getLogger(AnalysisController.class);
@@ -22,9 +22,10 @@ public class AnalysisController {
     @Autowired
     AnalysisService analysisService;
 
-    @PostMapping(value = "analyse", consumes = "application/json;charset=UTF-8")
+    @PostMapping(value = "/analyse")
     public ResponseEntity<String> analyse(@RequestBody(required = false) String payload) {
         try {
+            System.out.println("predicting in controller...")
             return new ResponseEntity<>(analysisService.analyse(payload), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
