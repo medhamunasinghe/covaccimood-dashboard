@@ -2,6 +2,7 @@ package com.me.dashboard.database.repository;
 
 import com.me.dashboard.database.entities.SentimentResult;
 import org.springframework.data.repository.CrudRepository;
+import java.util.List;
 
 
 public interface SentimentResultRepository extends CrudRepository<SentimentResult, Long> {
@@ -16,4 +17,7 @@ public interface SentimentResultRepository extends CrudRepository<SentimentResul
     // Long neutralCount();
 
     Long countAllBySentiment(String sentiment);
+
+    @Override
+    List<Platform> findAll();
 }
