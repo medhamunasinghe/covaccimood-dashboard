@@ -26,14 +26,14 @@ public class SentimentResultCrud {
     }
 
     public Long getPositiveCount() {
-        return sentenceRepository.positiveCount();
+        return sentenceRepository.countAllBySentiment("Positive");
     }
 
     public Long getNegativeCount() {
-        return sentenceRepository.negativeCount();
+        return sentenceRepository.countAllBySentiment("Negative");
     }
 
     public Long getNeutralCount() {
-        return sentenceRepository.neutralCount();
+        return sentenceRepository.countAllBySentiment("Neutral");
     }
 }

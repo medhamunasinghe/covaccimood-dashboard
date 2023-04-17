@@ -4,16 +4,19 @@ import com.me.dashboard.database.entities.SentimentResult;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.CrudRepository;
 
 @Repository
-public interface SentimentResultRepository extends JpaRepository<SentimentResult, Long> {
+public interface SentimentResultRepository extends CrudRepository<SentimentResult, Long> {
 
-    @Query(value = "SELECT COUNT(id) FROM covaccimood-db.sentence where sentiment ='Positive'", nativeQuery = true)
-    Long positiveCount();
+    // @Query(value = "SELECT COUNT(id) FROM covaccimood-db.sentence where sentiment ='Positive'", nativeQuery = true)
+    // Long positiveCount();
 
-    @Query(value = "SELECT COUNT(id) FROM covaccimood-db.sentence where sentiment ='Negative'", nativeQuery = true)
-    Long negativeCount();
+    // @Query(value = "SELECT COUNT(id) FROM covaccimood-db.sentence where sentiment ='Negative'", nativeQuery = true)
+    // Long negativeCount();
 
-    @Query(value = "SELECT COUNT(id) FROM covaccimood-db.sentence where sentiment ='Neutral'", nativeQuery = true)
-    Long neutralCount();
+    // @Query(value = "SELECT COUNT(id) FROM covaccimood-db.sentence where sentiment ='Neutral'", nativeQuery = true)
+    // Long neutralCount();
+
+    Long countAllBySentiment(String sentiment);
 }
