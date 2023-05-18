@@ -24,7 +24,7 @@ public class AnalysisController {
     @Autowired
     AnalysisService analysisService;
 
-    @PostMapping("/analyse", produces = "application/json;charset=UTF-8")
+    @PostMapping(value = "analyse", produces = "application/json;charset=UTF-8")
     public ResponseEntity<String> analyse(@RequestBody(required = false) String payload) {
         try {
             System.out.println("predicting in controller...");
@@ -34,7 +34,7 @@ public class AnalysisController {
         }
     }
 
-    @PostMapping("/analyseonlysentiment", produces = "application/json;charset=UTF-8")
+    @PostMapping(value = "analyseonlysentiment", produces = "application/json;charset=UTF-8")
     public ResponseEntity<String> analyseonlysentiment(@RequestBody(required = false) String payload) {
         try {
             String inputJson = analysisService.analyse(payload);
