@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 @ComponentScan
 @EnableSwagger2
@@ -22,11 +24,25 @@ public class AnalysisController {
     @Autowired
     AnalysisService analysisService;
 
-    @PostMapping("/analyse")
+    @PostMapping("/analyse", produces = "application/json;charset=UTF-8")
     public ResponseEntity<String> analyse(@RequestBody(required = false) String payload) {
         try {
             System.out.println("predicting in controller...");
             return new ResponseEntity<>(analysisService.analyse(payload), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PostMapping("/analyseonlysentiment", produces = "application/json;charset=UTF-8")
+    public ResponseEntity<String> analyseonlysentiment(@RequestBody(required = false) String payload) {
+        try {
+            String inputJson = analysisService.analyse(payload);
+            JsonParser parser = new JsonParser();
+            JsonObject jsonObject = parser.parse(inputJson).getAsJsonObject();
+            JsonObject sentimentObject = new JsonObject();
+            sentimentObject.addProperty("sentiment", jsonObject.get("sentiment").getAsString());
+            return new ResponseEntity<>(String.valueOf(sentimentObject), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
